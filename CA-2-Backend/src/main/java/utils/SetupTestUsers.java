@@ -33,7 +33,7 @@ public class SetupTestUsers {
     Boat boat6 = new Boat(6, "Masterchef", "Mastercraft", "NXT", "mastercraft.jpeg");
     Boat boat7 = new Boat(7, "Sea Ray", "Sea Ray", "SUN SPORT 230", "sea-ray.jpeg");
     Boat boat8 = new Boat(8, "Tracker", "Tracker", "DEEP V", "tracker.jpeg");
-    Boat boat9 = new Boat(9, "Vking Yacths", "Viking Yacths", "92EB", "viking-yachts.jpeg");
+    Boat boat9 = new Boat(9, "Viking Yachts", "Viking Yacths", "92EB", "viking-yachts.jpeg");
     Boat boat10 = new Boat(10, "Yamaha", "Yamaha", "19 FT", "yamaha.jpeg");
 
     // owners
