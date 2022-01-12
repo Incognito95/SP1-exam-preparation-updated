@@ -2,11 +2,11 @@ function Home() {
 
     return (
         <div className="mt-5">
-            <h3 className="welcome-header">Velkommen til vores hjemmeside, her kan du få:</h3>
-            <ul className="list-group mt-4">
-                <li className="list-group-item">En liste af både</li>
-                <li className="list-group-item">Tilføj, Rediger, opdater og slette både på listen</li>
-                <li className="list-group-item">Login system hvor man kan enten login som admin eller bruger</li>
+            <h3 className="welcome-header">Welcome to my website, here you can:</h3>
+            <ul className="list-group mt-4 w-50">
+                <li className="list-group-item">See a list of boats</li>
+                <li className="list-group-item">Create, read, update and delete boats to the list</li>
+                <li className="list-group-item">Login as either an admin or a user</li>
             </ul>
 
 
