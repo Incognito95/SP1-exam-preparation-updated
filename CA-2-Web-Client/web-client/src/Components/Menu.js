@@ -10,7 +10,7 @@ function Menu () {
     return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-            <NavLink exact active className="navbar-brand" to="/">Navbar</NavLink>
+            <NavLink exact active className="navbar-brand" to="/"><img src="/images/logo.png" width="45" /></NavLink>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -19,13 +19,16 @@ function Menu () {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                        <NavLink exact active className="active nav-link btn btn-primary text-white" to="/">Home</NavLink>
+                        <NavLink exact active className="active nav-link" to="/">Home</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink exact active className="active nav-link" to="#"></NavLink>
+                        <NavLink exact active className="active nav-link" to="/owners">Owners</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink exact active className="active nav-link btn btn-primary text-white" to="/allmovies">All Movies</NavLink>
+                        <NavLink exact active className="active nav-link" to="/specific-harbour">Specific Harbour</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink exact active className="active nav-link" to="/specific-boat">Specific Boat</NavLink>
                     </li>
                 </ul>
                 <form className="d-flex">

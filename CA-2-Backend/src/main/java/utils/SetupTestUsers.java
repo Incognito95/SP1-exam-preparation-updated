@@ -1,9 +1,7 @@
 package utils;
 
 
-import entities.Movie;
-import entities.Role;
-import entities.User;
+import entities.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -21,49 +19,106 @@ public class SetupTestUsers {
     // Also, either delete this file, when users are created or rename and add to .gitignore
     // Whatever you do DO NOT COMMIT and PUSH with the real passwords
 
-
+    // user / admin
     User user = new User("user", "1234");
     User admin = new User("admin", "12345");
     User both = new User("user_admin", "1234");
 
-    Movie movie1 = new Movie(1L, "Dick Johnson Is Dead", "As her father nears the end of his life, filmmaker Kirsten Johnson stages his death in inventive and comical ways to help them both face the inevitable.", "dick_johnson.jpeg");
-    Movie movie2 = new Movie(2L, "Blood & Water", "After crossing paths at a party, a Cape Town teen sets out to prove whether a private-school swimming star is her sister who was abducted at birth.", "blood_water.jpg");
-    Movie movie3 = new Movie(3L, "Ganglands", "To protect his family from a powerful drug lord, skilled thief Mehdi and his expert team of robbers are pulled into a violent and deadly turf war.", "ganglands.jpg");
-    Movie movie4 = new Movie(4L, "Jailbirds New Orleans", "Feuds, flirtations and toilet talk go down among the incarcerated women at the Orleans Justice Center in New Orleans on this gritty reality series.", "new_orleans.jpg");
-    Movie movie5 = new Movie(5L, "Kota Factory", "In a city of coaching centers known to train India’s finest collegiate minds, an earnest but unexceptional student and his friends navigate campus life.", "kota_factory.jpg");
-    Movie movie6 = new Movie(6L, "Midnight Mass","The arrival of a charismatic young priest brings glorious miracles, ominous mysteries and renewed religious fervor to a dying town desperate to believe.","midnight_mass.jpg");
-    Movie movie7 = new Movie(7L,"My Little Pony: A New Generation","Equestria's divided. But a bright-eyed hero believes Earth Ponies, Pegasi and Unicorns should be pals — and, hoof to heart, she’s determined to prove it.","my_little_pony_a_new_generation.jpg");
-    Movie movie8 = new Movie(8L,"Spider-man 1","When bitten by a genetically modified spider, a nerdy, shy, and awkward high school student gains spider-like abilities that he eventually must use to fight evil as a superhero after tragedy befalls his family.","spider_man.jpg");
-    Movie movie9 = new Movie(9L,"Spider-man 2","Peter Parker is beset with troubles in his failing personal life as he battles a brilliant scientist named Doctor Otto Octavius.", "spider_man_2.jpg");
-    Movie movie10 = new Movie(10L,"Pulp Fiction","In the realm of underworld, a series of incidents intertwines the lives of two Los Angeles mobsters, a gangster's wife, a boxer and two small-time criminals.", "pulp-fiction.jpeg");
+    // boats
+    Boat boat1 = new Boat(1, "Bertram", "Bertram", "Bertram 800", "bertram.jpeg");
+    Boat boat2 = new Boat(2, "Boston Whaler", "Boston Whaler", "Montauk", "boston-whaler.jpeg");
+    Boat boat3 = new Boat(3, "Chapparal", "Chapparal", "SSX", "chapparal.jpeg");
+    Boat boat4 = new Boat(4, "Grady White", "Grady White", "The Canyon 336", "grady-white.jpeg");
+    Boat boat5 = new Boat(5, "Lund", "Lund", "PRO-V BASS XS", "lund.jpeg");
+    Boat boat6 = new Boat(6, "Masterchef", "Mastercraft", "NXT", "mastercraft.jpeg");
+    Boat boat7 = new Boat(7, "Sea Ray", "Sea Ray", "SUN SPORT 230", "sea-ray.jpeg");
+    Boat boat8 = new Boat(8, "Tracker", "Tracker", "DEEP V", "tracker.jpeg");
+    Boat boat9 = new Boat(9, "Vking Yacths", "Viking Yacths", "92EB", "viking-yachts.jpeg");
+    Boat boat10 = new Boat(10, "Yamaha", "Yamaha", "19 FT", "yamaha.jpeg");
 
+    // owners
+    Owner owner1 = new Owner(1, "Guinevere", "773 Judy Alley", 645746);
+    Owner owner2 = new Owner(2, "Tammara", "32 Annamark Way", 7439755);
+    Owner owner3 = new Owner(3, "Saxe", "998 Lakewood Center", 850502);
+    Owner owner4 = new Owner(4, "Rob", "579 Shopko Avenue", 395467);
+    Owner owner5 = new Owner(5, "Algernon", "32 Emmet Circle", 316256);
+    Owner owner6 = new Owner(6, "Normy", "34 Springview Alley", 621683);
+    Owner owner7 = new Owner(7, "Joycelin", "1248 Eggendart Court", 741665);
+    Owner owner8 = new Owner(8, "Hali", "8 Spaight Court", 655738);
+    Owner owner9 = new Owner(9, "Vernon", "875 American Ash Avenue", 833832);
+    Owner owner10 = new Owner(10, "Jonathan", "1 Oakridge Pass", 452221);
+
+    // harbours
+    Harbour harbour1 = new Harbour(1, "Sydney", "Sydney Harbour Bridge, Sydney NSW, Australia", 50);
+    Harbour harbour2 = new Harbour(2, "Kotor", "Montenegro", 100);
+    Harbour harbour3 = new Harbour(3, "Victoria Harbour", "Admiralty, Hong Kong", 1000);
+    Harbour harbour4 = new Harbour(4, "Neko Harbour", "Antarctica", 50);
+    Harbour harbour5 = new Harbour(5, "Rio de Janeiro", "Brazil", 50);
+    Harbour harbour6 = new Harbour(6, "Stockholm", "Sweden", 50);
+    Harbour harbour7 = new Harbour(7, "English Harbour", "Antigua", 50);
+    Harbour harbour8 = new Harbour(8, "Vancouver", "Canada", 50);
+    Harbour harbour9 = new Harbour(9, "Mo’orea", "French Polynesia", 50);
+    Harbour harbour10 = new Harbour(10, "Port of Shanghai", "Shanghai", 50);
+
+
+    // check if you can get username and password
     if(admin.getUserPass().equals("test")||user.getUserPass().equals("test")||both.getUserPass().equals("test"))
       throw new UnsupportedOperationException("You have not changed the passwords");
 
 
     em.getTransaction().begin();
+
+    // boats
+    em.persist(boat1);
+    em.persist(boat2);
+    em.persist(boat3);
+    em.persist(boat4);
+    em.persist(boat5);
+    em.persist(boat6);
+    em.persist(boat7);
+    em.persist(boat8);
+    em.persist(boat9);
+    em.persist(boat10);
+
+    // owners
+    em.persist(owner1);
+    em.persist(owner2);
+    em.persist(owner3);
+    em.persist(owner4);
+    em.persist(owner5);
+    em.persist(owner6);
+    em.persist(owner7);
+    em.persist(owner8);
+    em.persist(owner9);
+    em.persist(owner10);
+
+    // harbours
+    em.persist(harbour1);
+    em.persist(harbour2);
+    em.persist(harbour3);
+    em.persist(harbour4);
+    em.persist(harbour5);
+    em.persist(harbour6);
+    em.persist(harbour7);
+    em.persist(harbour8);
+    em.persist(harbour9);
+    em.persist(harbour10);
+
+    // adding user / admin roles
     Role userRole = new Role("user");
     Role adminRole = new Role("admin");
     user.addRole(userRole);
     admin.addRole(adminRole);
-    both.addRole(userRole);
-    both.addRole(adminRole);
     em.persist(userRole);
     em.persist(adminRole);
     em.persist(user);
     em.persist(admin);
     em.persist(both);
-    em.persist(movie1);
-    em.persist(movie2);
-    em.persist(movie3);
-    em.persist(movie4);
-    em.persist(movie5);
-    em.persist(movie6);
-    em.persist(movie7);
-    em.persist(movie8);
-    em.persist(movie9);
-    em.persist(movie10);
+
+    // commit multiple transactions
     em.getTransaction().commit();
+
+    // print to console
     System.out.println("PW: " + user.getUserPass());
     System.out.println("Testing user with OK password: " + user.verifyPassword("test"));
     System.out.println("Testing user with wrong password: " + user.verifyPassword("test1"));
