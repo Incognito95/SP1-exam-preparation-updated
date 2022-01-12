@@ -1,10 +1,7 @@
 package rest;
 
 import com.google.gson.Gson;
-import entities.Boat;
-import entities.Harbour;
-import entities.Owner;
-import entities.User;
+import entities.*;
 
 import java.sql.*;
 import java.util.ArrayList;
